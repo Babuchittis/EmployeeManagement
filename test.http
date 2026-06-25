@@ -1,0 +1,35 @@
+@server=http://localhost:45295/odata/v4
+
+### POST Create a new employee
+POST {{server}}/employee/Employees
+Content-Type: application/json
+
+{
+  "empId": "EMP002",
+  "firstName": "Peter",
+  "lastName": "G",
+  "email": "Peter.g@gmail.com",
+  "department": "IT",
+  "salary": 75000
+}
+
+### Update an employee
+PATCH {{server}}/employee/Employees('c9151995-43ee-459d-8a59-28b26848a829')
+Content-Type: application/json
+Accept: application/json
+
+{
+   "email": "Peter@gmail.com"  
+}
+
+### Delete an employee
+DELETE {{server}}/employee/Employees('c9151995-43ee-459d-8a59-28b26848a829')
+Content-Type: application/json
+Accept: application/json
+
+
+### Get all employees
+GET {{server}}/employee/Employees
+
+### Get an employee
+GET {{server}}/employee/Employees('c9151995-43ee-459d-8a59-28b26848a829')

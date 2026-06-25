@@ -1,0 +1,11 @@
+@Service = http://localhost:45295/odata/v4
+
+GET  {{Service}}/employee/Employees
+
+### Post a new employee
+POST http://localhost:45295/odata/v4/employee-service/Employees
+Content-Type: "application/json"
+{
+  "firstName": "John",
+  "lastName": "Doe"
+}
