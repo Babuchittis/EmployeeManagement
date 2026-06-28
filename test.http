@@ -33,3 +33,96 @@ GET {{server}}/employee/Employees
 
 ### Get an employee
 GET {{server}}/employee/Employees('c9151995-43ee-459d-8a59-28b26848a829')
+
+###Filter -Employees in IT department:
+
+GET {{server}}/employee/Employees?$filter=department eq 'IT'
+
+### Sort - Sort by salary:
+GET {{server}}/employee/Employees?$orderby=salary desc
+
+###Top Records
+GET {{server}}/employee/Employees?$orderby=ID & $top=5
+
+###Skip Records
+GET {{server}}/employee/Employees?$skip=5
+
+###Select Specific Fields
+GET {{server}}/employee/Employees?$select=empId,firstName,salary
+
+
+###Search Employee
+GET {{server}}/employee/Employees?$search=John
+
+###Multiple Conditions
+GET {{server}}/employee/Employees?$filter=salary gt 50000 and department eq 'IT'
+
+
+### Create Employee with Composition
+
+POST {{server}}/employee/Employees
+Content-Type: application/json
+Accept: application/json
+
+{
+    "empId":"EMP018",
+    "firstName":"John",
+    "lastName":"Doe",
+    "email":"john@gmail.com",
+    "department":"IT",
+    "salary":80000,
+    "addresses":[
+        {
+            "houseNo":"12A",
+            "street":"MG Road",
+            "city":"Bangalore",
+            "state":"Karnataka",
+            "country":"India",
+            "pincode":"560001"
+        },
+        {
+            "houseNo":"20B",
+            "street":"Brigade Road",
+            "city":"Bangalore",
+            "state":"Karnataka",
+            "country":"India",
+            "pincode":"560025"
+        }
+    ]
+}
+
+
+### Read Employee with Addresses
+GET {{server}}/employee/Employees?$expand=addresses
+
+###Create a Department
+POST {{server}}/employee/Departments
+Content-Type: application/json
+
+{
+    "deptId":"D001",
+    "deptName":"Information Technology"
+}
+
+###Create an Employee Associated with the Department
+POST {{server}}/employee/Employees
+Content-Type: application/json
+
+{
+    "empId":"EMP001",
+    "firstName":"John",
+    "lastName":"Doe",
+    "email":"john@gmail.com",
+    "salary":75000,
+
+    "department":"5a0858ad-0f1f-4f0a-a327-306da4fc1232"
+}
+
+###Read Employee with Department
+GET {{server}}/employee/Employees?$expand=departments
+
+###Read Department with Employees
+GET {{server}}/employee/Departments?$expand=employees
+
+###Delete an Employee
+DELETE {{server}}/employee/Employees('eacf4afc-82ce-4971-87df-c7291bd2240e')

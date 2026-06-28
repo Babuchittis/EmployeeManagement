@@ -20,3 +20,16 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at <https://cap.cloud.sap>.
+
+## Commonly Used CAP Annotations
+@title	Display label
+@mandatory	Required field
+@readonly	Read-only field
+@assert.range	Numeric validation
+@assert.format	Regex validation
+@Core.Description	Field description
+@Common.Label	UI label
+@UI.Hidden	Hide field in UI
+@UI.LineItem	Show in list report
+@UI.Identification	Show on object page
+@UI.SelectionField	Filter field    
