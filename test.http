@@ -1,4 +1,4 @@
-@server=http://localhost:45295/odata/v4
+@server=http://localhost:4004/odata/v4
 
 ### POST Create a new employee
 POST {{server}}/employee/Employees

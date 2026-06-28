@@ -1,0 +1,11 @@
+ID,empId,firstName,lastName,email,department,salary,createdAt,createdBy,modifiedAt,modifiedBy
+1,E1001,John,Doe,john.doe@example.com,IT,75000,2026-01-10T09:00:00Z,Admin,2026-03-15T10:30:00Z,Admin
+2,E1002,Jane,Smith,jane.smith@example.com,HR,68000,2026-01-12T11:15:00Z,Admin,2026-04-01T14:20:00Z,HRManager
+3,E1003,Michael,Johnson,michael.johnson@example.com,Finance,82000,2026-01-15T08:45:00Z,Admin,2026-03-25T16:10:00Z,FinanceLead
+4,E1004,Emily,Davis,emily.davis@example.com,Marketing,71000,2026-01-18T10:00:00Z,Admin,2026-05-02T12:00:00Z,MarketingLead
+5,E1005,David,Brown,david.brown@example.com,Sales,69000,2026-01-20T13:30:00Z,Admin,2026-04-18T09:45:00Z,SalesManager
+6,E1006,Sophia,Wilson,sophia.wilson@example.com,IT,88000,2026-01-22T15:20:00Z,Admin,2026-05-10T11:30:00Z,ITManager
+7,E1007,Daniel,Moore,daniel.moore@example.com,Operations,72000,2026-01-25T09:40:00Z,Admin,2026-04-22T13:15:00Z,OperationsLead
+8,E1008,Olivia,Taylor,olivia.taylor@example.com,Finance,84000,2026-01-28T10:10:00Z,Admin,2026-05-12T15:00:00Z,FinanceLead
+9,E1009,James,Anderson,james.anderson@example.com,HR,67000,2026-02-01T08:30:00Z,Admin,2026-04-30T10:45:00Z,HRManager
+10,E1010,Ava,Thomas,ava.thomas@example.com,IT,91000,2026-02-05T14:00:00Z,Admin,2026-05-20T09:20:00Z,ITManager
