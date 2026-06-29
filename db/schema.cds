@@ -26,6 +26,7 @@ entity Employees : cuid, managed {
     @assert.range:[10000,1000000]
     salary     : Decimal(15,2);
 
+    status      : String(20);
     addresses : Composition of many Addresses
                     on addresses.employee = $self;
     departments : Association to Departments;

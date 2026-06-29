@@ -60,3 +60,69 @@ module.exports = cds.service.impl(async function () {
     });
 
 });
+
+module.exports = cds.service.impl(async function () {
+
+    const { Employees } = this.entities;
+
+    // Function
+    this.on("getAnnualSalary", async (req) => {
+
+        const { ID } = req.data;
+
+        const employee = await SELECT.one
+            .from(Employees)
+            .where({ ID });
+
+        return employee.salary * 12;
+
+    });
+
+    // Function
+    this.on("getEmployeeCount", async () => {
+
+        const result = await SELECT.from(Employees);
+
+        return result.length;
+
+    });
+
+    // Action
+    this.on("promoteEmployee", async (req) => {
+
+        const { ID, department } = req.data;
+
+        await UPDATE(Employees)
+            .set({
+                department: department
+            })
+            .where({ ID });
+
+        return "Employee promoted successfully";
+
+    });
+
+    // Action
+    this.on("increaseSalary", async (req) => {
+
+        const { ID, percentage } = req.data;
+
+        const employee = await SELECT.one
+            .from(Employees)
+            .where({ ID });
+
+        const newSalary =
+            employee.salary +
+            (employee.salary * percentage / 100);
+
+        await UPDATE(Employees)
+            .set({
+                salary: newSalary
+            })
+            .where({ ID });
+
+        return "Salary updated";
+
+    });
+
+});
