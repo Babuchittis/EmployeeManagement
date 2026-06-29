@@ -37,16 +37,17 @@ entity Addresses : cuid {
     employee : Association to Employees;
 
     @mandatory
+    @title : 'House Number'
     houseNo : String(20);
-
+@title : 'Street'
     street : String(100);
-
+@title : 'City'
     city : String(50);
-
+@title : 'State'
     state : String(50);
-
+@title : 'Country'
     country : String(50);
-
+@title : 'Pincode'
     pincode : String(10);
 }
 
