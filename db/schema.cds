@@ -3,11 +3,11 @@ namespace employee;
 using { cuid, managed } from '@sap/cds/common';
 
 entity Employees : cuid, managed {
-
     @title: 'Employee ID'
     empId      : String(10);
 
     @mandatory
+    @assert.format: '^[A-Za-z ]+$'
     @title: 'First Name'
     firstName  : String(50);
 

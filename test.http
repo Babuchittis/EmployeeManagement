@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
   "empId": "EMP002",
-  "firstName": "Peter",
+  "firstName": "John Peter",
   "lastName": "G",
   "email": "Peter.g@gmail.com",
   "department": "IT",

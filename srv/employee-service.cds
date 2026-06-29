@@ -1,6 +1,8 @@
 using employee from '../db/schema';
 
-service EmployeeService {
+@protocol: ['odata-v4', 'rest']
+
+service EmployeeService @(path:'/employee') {
 
     entity Employees as projection on employee.Employees;
     entity Addresses as projection on employee.Addresses;
