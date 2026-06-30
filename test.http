@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### Update an employee
-PATCH {{server}}/employee/Employees('c9151995-43ee-459d-8a59-28b26848a829')
+PATCH {{server}}/employee/Employees('bae2a62a-0257-486f-ac1f-df48b7a0d58b')
 Content-Type: application/json
 Accept: application/json
 
@@ -32,7 +32,7 @@ Accept: application/json
 GET {{server}}/employee/Employees
 
 ### Get an employee
-GET {{server}}/employee/Employees('c9151995-43ee-459d-8a59-28b26848a829')
+GET {{server}}/employee/Employees('aa1b7070-b9d9-441c-9cc5-0601c3bdf1d4')
 
 ###Filter -Employees in IT department:
 
@@ -126,3 +126,30 @@ GET {{server}}/employee/Departments?$expand=employees
 
 ###Delete an Employee
 DELETE {{server}}/employee/Employees('eacf4afc-82ce-4971-87df-c7291bd2240e')
+
+
+####Get Annual Salary of an Employee
+GET {{server}}/employee/getAnnualSalary(ID = 'aa1b7070-b9d9-441c-9cc5-0601c3bdf1d4')
+
+### Get Employee Count
+GET {{server}}/employee/getEmployeeCount()
+
+#### Increase Salary of an Employee
+POST {{server}}/employee/increaseSalary
+Content-Type: application/json
+
+{
+    "ID":"aa1b7070-b9d9-441c-9cc5-0601c3bdf1d4",
+    "percentage":10
+}
+#### Promote an Employee
+
+POST {{server}}/employee/promoteEmployee
+Content-Type: application/json
+
+{
+    "ID":"aa1b7070-b9d9-441c-9cc5-0601c3bdf1d4",
+    "department":"Management"
+}
+
+

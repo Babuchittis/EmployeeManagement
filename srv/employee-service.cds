@@ -2,7 +2,7 @@ using employee from '../db/schema';
 
 @protocol: ['odata-v4', 'rest']
 
-service EmployeeService @(path:'/employee') {
+service EmployeeService @(path:'/employee', impl : 'srv/manage-employee.js') {
 
     entity Employees as projection on employee.Employees;
     entity Addresses as projection on employee.Addresses;
@@ -22,6 +22,7 @@ service EmployeeService @(path:'/employee') {
     action increaseSalary(
         ID : UUID,
         percentage : Integer
-    );
+    );  
+
 }
 
