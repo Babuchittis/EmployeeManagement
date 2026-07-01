@@ -5,10 +5,10 @@ POST {{server}}/employee/Employees
 Content-Type: application/json
 
 {
-  "empId": "EMP002",
-  "firstName": "John Peter",
-  "lastName": "G",
-  "email": "Peter.g@gmail.com",
+  "empId": "EMP012",
+  "firstName": "CAPM",
+  "lastName": "BTP",
+  "email": "CAPM.BTP@gmail.com",
   "department": "IT",
   "salary": 75000
 }
