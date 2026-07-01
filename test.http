@@ -129,7 +129,7 @@ DELETE {{server}}/employee/Employees('eacf4afc-82ce-4971-87df-c7291bd2240e')
 
 
 ####Get Annual Salary of an Employee
-GET {{server}}/employee/getAnnualSalary(ID = 'aa1b7070-b9d9-441c-9cc5-0601c3bdf1d4')
+GET {{server}}/employee/getAnnualSalary(ID = '5a79c537-1381-4784-a142-ad52612fe3c9')
 
 ### Get Employee Count
 GET {{server}}/employee/getEmployeeCount()
