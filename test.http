@@ -1,11 +1,11 @@
-@server=http://localhost:4004
+@server=http://localhost:37189
 
 ### POST Create a new employee
 POST {{server}}/employee/Employees
 Content-Type: application/json
 
 {
-  "empId": "EMP012",
+  "empId": "EMP014",
   "firstName": "CAPM",
   "lastName": "BTP",
   "email": "CAPM.BTP@gmail.com",
