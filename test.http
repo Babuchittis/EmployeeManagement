@@ -1,14 +1,14 @@
-@server=http://localhost:37189
+@server=http://localhost:4004
 
 ### POST Create a new employee
 POST {{server}}/employee/Employees
 Content-Type: application/json
 
 {
-  "empId": "EMP014",
+  "empId": "EMP018",
   "firstName": "CAPM",
   "lastName": "BTP",
-  "email": "CAPM.BTP@gmail.com",
+  "email": "CAPM.BTP@gmail1.com",
   "department": "IT",
   "salary": 75000
 }
@@ -134,7 +134,7 @@ GET {{server}}/employee/getAnnualSalary(ID = '5a79c537-1381-4784-a142-ad52612fe3
 ### Get Employee Count
 GET {{server}}/employee/getEmployeeCount()
 
-#### Increase Salary of an Employee
+### Increase Salary of an Employee
 POST {{server}}/employee/increaseSalary
 Content-Type: application/json
 

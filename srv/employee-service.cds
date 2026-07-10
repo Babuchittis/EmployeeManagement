@@ -2,7 +2,7 @@ using employee from '../db/schema';
 
 @protocol: ['odata-v4', 'rest']
 
-service EmployeeService @(path:'/employee', impl : 'srv/manage-employee.js') {
+service EmployeeService @(path:'/employee', impl : 'srv/manage-employee.js', requires:'authenticated-user') {
 
     entity Employees as projection on employee.Employees;
     entity Addresses as projection on employee.Addresses;
