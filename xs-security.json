@@ -1,0 +1,37 @@
+{
+  "xsappname": "Employee-Management-App",
+  "tenant-mode": "dedicated",
+  "description": "Security configuration for Employee CAP Application",
+  "scopes": [{
+    "name" : "$XSAPPNAME.ViewEmp",
+    "description" : "Read-only access to team and players"
+  }
+  ],
+  "attributes": [],
+ 
+  "role-templates": [
+    {
+      "name":"EMPViewer",
+      "description":"Spectator role - read-only access to employee",
+      "scope-reference":[
+        "$XSAPPNAME.ViewEmp"
+      ]
+    },
+    {
+      "name":"EMPAdmin",
+      "description":"Admin can able to create/update",
+      "scope-reference":[
+        "$XSAPPNAME.ViewEmp",
+        "$XSAPPNAME.ManageEmp"
+      ]
+    },
+    {
+      "name":"EMPManager",
+      "description":"Manager can able to create/update/delete",
+      "scope-reference":[
+        "$XSAPPNAME.ViewEmp",
+        "$XSAPPNAME.ManageEmp"
+      ]
+    }
+  ]
+}

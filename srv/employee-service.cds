@@ -4,6 +4,23 @@ using employee from '../db/schema';
 
 service EmployeeService @(path:'/employee', impl : 'srv/manage-employee.js', requires:'authenticated-user') {
 
+@restrict:[
+    {grant: 'READ', to: ['EMPViewer','EMPAdmin']},
+    {grant: ['CREATE','update'], to:['EMPAdmin']},
+    {grant:['READ','UPDATE','CREATE','DELETE'], to:['EMPManager']}
+    // {
+    //     grant: 'UPDATE',
+    //     to: ['Employees', 'Addresses', 'Departments']
+    // },
+    // {
+    //     grant: 'CREATE',
+    //     to: ['Employees', 'Addresses', 'Departments']
+    // },
+    // {
+    //     grant: 'DELETE',
+    //     to: ['Employees', 'Addresses', 'Departments']
+    // } 
+    ]
     entity Employees as projection on employee.Employees;
     entity Addresses as projection on employee.Addresses;
      entity Departments as projection on employee.Departments;

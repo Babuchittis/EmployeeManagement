@@ -3,6 +3,9 @@
 ### POST Create a new employee
 POST {{server}}/employee/Employees
 Content-Type: application/json
+Accept: application/json
+//Authorization: Basic Q2hpdHRpOnVzZXI=
+Authorization: Basic EMPAdmin:user
 
 {
   "empId": "EMP018",
@@ -23,14 +26,19 @@ Accept: application/json
 }
 
 ### Delete an employee
-DELETE {{server}}/employee/Employees('c9151995-43ee-459d-8a59-28b26848a829')
+DELETE {{server}}/employee/Employees('a78d8b6c-f673-4507-8f88-ef34295bfe55')
 Content-Type: application/json
 Accept: application/json
+Authorization: Basic EMPManager:user
 
 
 ### Get all employees
 GET {{server}}/employee/Employees
+Authorization: Basic Chitti:user
+Content-Type: application/json
+Accept: application/json
 
+//Authorization: Basic Q2hpdHRpOnVzZXI=
 ### Get an employee
 GET {{server}}/employee/Employees('aa1b7070-b9d9-441c-9cc5-0601c3bdf1d4')
 
@@ -94,6 +102,9 @@ Accept: application/json
 
 ### Read Employee with Addresses
 GET {{server}}/employee/Employees?$expand=addresses
+Authorization: Basic Q2hpdHRpOnVzZXI=
+Content-Type: application/json
+Accept: application/json
 
 ###Create a Department
 POST {{server}}/employee/Departments
