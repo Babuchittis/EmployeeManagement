@@ -71,9 +71,10 @@ GET {{server}}/employee/Employees?$filter=salary gt 50000 and department eq 'IT'
 POST {{server}}/employee/Employees
 Content-Type: application/json
 Accept: application/json
+Authorization: Basic EMPManager:user
 
 {
-    "empId":"EMP018",
+    "empId":"EMP020",
     "firstName":"John",
     "lastName":"Doe",
     "email":"john@gmail.com",

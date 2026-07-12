@@ -22,6 +22,10 @@ service EmployeeService @(path:'/employee', impl : 'srv/manage-employee.js', req
     // } 
     ]
     entity Employees as projection on employee.Employees;
+    @restrict:[
+        {grant: ['CREATE','update'], to:['EMPAdmin']},
+        {grant: 'READ', to: ['EMPViewer','EMPAdmin']}
+    ]
     entity Addresses as projection on employee.Addresses;
      entity Departments as projection on employee.Departments;
 
