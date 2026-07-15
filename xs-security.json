@@ -1,37 +1,53 @@
 {
-  "xsappname": "Employee-Management-App",
-  "tenant-mode": "dedicated",
-  "description": "Security configuration for Employee CAP Application",
-  "scopes": [{
-    "name" : "$XSAPPNAME.ViewEmp",
-    "description" : "Read-only access to team and players"
+ "xsappname": "Employee-Management-App",
+ "tenant-mode": "dedicated",
+ "description": "Security configuration for Employee CAP Application",
+ "scopes": [
+  {
+   "name": "$XSAPPNAME.ViewEmp",
+   "description": "Read-only access to team and players"
+  },
+  {
+   "name": "$XSAPPNAME.ManageEmp",
+   "description": "Create/update/delete access to employee"
+  },
+  {
+   "name": "$XSAPPNAME.EMPViewer",
+   "description": "EMPViewer"
+  },
+  {
+   "name": "$XSAPPNAME.EMPAdmin",
+   "description": "EMPAdmin"
+  },
+  {
+   "name": "$XSAPPNAME.EMPManager",
+   "description": "EMPManager"
   }
-  ],
-  "attributes": [],
- 
-  "role-templates": [
-    {
-      "name":"EMPViewer",
-      "description":"Spectator role - read-only access to employee",
-      "scope-reference":[
-        "$XSAPPNAME.ViewEmp"
-      ]
-    },
-    {
-      "name":"EMPAdmin",
-      "description":"Admin can able to create/update",
-      "scope-reference":[
-        "$XSAPPNAME.ViewEmp",
-        "$XSAPPNAME.ManageEmp"
-      ]
-    },
-    {
-      "name":"EMPManager",
-      "description":"Manager can able to create/update/delete",
-      "scope-reference":[
-        "$XSAPPNAME.ViewEmp",
-        "$XSAPPNAME.ManageEmp"
-      ]
-    }
-  ]
+ ],
+ "attributes": [],
+ "role-templates": [
+  {
+   "name": "EMPViewer",
+   "description": "Spectator role - read-only access to employee",
+   "scope-references": [
+    "$XSAPPNAME.ViewEmp"
+   ]
+  },
+  {
+   "name": "EMPAdmin",
+   "description": "Admin can able to create/update",
+   "scope-references": [
+    "$XSAPPNAME.ViewEmp",
+    "$XSAPPNAME.ManageEmp"
+   ]
+  },
+  {
+   "name": "EMPManager",
+   "description": "Manager can able to create/update/delete",
+   "scope-references": [
+    "$XSAPPNAME.ViewEmp",
+    "$XSAPPNAME.ManageEmp"
+   ]
+  }
+ ]
 }

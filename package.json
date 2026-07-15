@@ -9,10 +9,10 @@
   "devDependencies": {
     "@cap-js/sqlite": "^2.4",
     "@sap/cds-dk": "^9",
-    "sqlite3": "^6.0.1",
     "cds-plugin-ui5": "^0.17.0",
+    "mbt": "^1.2.49",
     "rimraf": "^5.0.5",
-    "mbt": "^1.2.49"
+    "sqlite3": "^6.0.1"
   },
   "scripts": {
     "start": "cds-serve",

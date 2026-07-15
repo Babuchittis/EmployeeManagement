@@ -5,9 +5,10 @@ using employee from '../db/schema';
 service EmployeeService @(path:'/employee', impl : 'srv/manage-employee.js', requires:'authenticated-user') {
 
 @restrict:[
-    {grant: 'READ', to: ['EMPViewer','EMPAdmin']},
-    {grant: ['CREATE','update'], to:['EMPAdmin']},
+    {grant: 'READ', to: ['ViewEmp','ManageEmp']},
+    {grant: ['CREATE','update'], to:['ManageEmp']},
     {grant:['READ','UPDATE','CREATE','DELETE'], to:['EMPManager']}
+    
     // {
     //     grant: 'UPDATE',
     //     to: ['Employees', 'Addresses', 'Departments']
@@ -21,6 +22,7 @@ service EmployeeService @(path:'/employee', impl : 'srv/manage-employee.js', req
     //     to: ['Employees', 'Addresses', 'Departments']
     // } 
     ]
+    @odata.draft.enabled:true
     entity Employees as projection on employee.Employees;
     @restrict:[
         {grant: ['CREATE','update'], to:['EMPAdmin']},

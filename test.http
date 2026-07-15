@@ -1,4 +1,4 @@
-@server=http://localhost:4004
+@server=http://localhost:39881
 
 ### POST Create a new employee
 POST {{server}}/employee/Employees
@@ -26,7 +26,7 @@ Accept: application/json
 }
 
 ### Delete an employee
-DELETE {{server}}/employee/Employees('a78d8b6c-f673-4507-8f88-ef34295bfe55')
+DELETE {{server}}/Employees('901ed717-b831-4ae6-b67c-9324739d0ae3')
 Content-Type: application/json
 Accept: application/json
 Authorization: Basic EMPManager:user
@@ -103,7 +103,7 @@ Authorization: Basic EMPManager:user
 
 ### Read Employee with Addresses
 GET {{server}}/employee/Employees?$expand=addresses
-Authorization: Basic Q2hpdHRpOnVzZXI=
+Authorization: Basic EMPManager:user
 Content-Type: application/json
 Accept: application/json
 
